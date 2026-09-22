@@ -1,0 +1,37 @@
+﻿Q#,Category,Question,Formula (with named ranges),Answer (13-32 only; 1-12 & 33-36 are per-employee)
+1,IF Function,"Show ""Pass"" when Marks are 40 or above; otherwise show ""Fail.""","=IF(Marks>=40,""Pass"",""Fail"")",
+2,IF Function,"Show ""High Salary"" when Salary is above 45,000; otherwise show ""Normal Salary.""","=IF(Salary>45000,""High Salary"",""Normal Salary"")",
+3,IF Function,"Show ""Eligible"" when Attendance is 80% or above; otherwise show ""Not Eligible.""","=IF(Attendance>=0.8,""Eligible"",""Not Eligible"")",
+4,IF Function,"Show ""Excellent"" when Marks are 90 or above; otherwise show ""Good.""","=IF(Marks>=90,""Excellent"",""Good"")",
+5,IF Function,"Show ""Technical"" for IT employees and ""Non-Technical"" for everyone else.","=IF(Department=""IT"",""Technical"",""Non-Technical"")",
+6,IF Function,"Show ""Top Performer"" when Marks are at least 85 and Attendance is at least 90%; otherwise show ""Standard.""","=IF(AND(Marks>=85,Attendance>=0.9),""Top Performer"",""Standard"")",
+7,IFS Function,"Grade Marks as: 90+ Excellent, 80-89 Very Good, 70-79 Good, 60-69 Average, below 60 Fail.","=IFS(Marks>=90,""Excellent"",Marks>=80,""Very Good"",Marks>=70,""Good"",Marks>=60,""Average"",TRUE,""Fail"")",
+8,IFS Function,"Classify Salary as: 50,000+ A, 40,000-49,999 B, 35,000-39,999 C, below 35,000 D.","=IFS(Salary>=50000,""A"",Salary>=40000,""B"",Salary>=35000,""C"",TRUE,""D"")",
+9,IFS Function,"Classify Attendance as: 90%+ Excellent, 80-89% Good, 75-79% Average, below 75% Poor.","=IFS(Attendance>=0.9,""Excellent"",Attendance>=0.8,""Good"",Attendance>=0.75,""Average"",TRUE,""Poor"")",
+10,IFS Function,"Show ""Eligible"" when Marks are at least 80 and Attendance is at least 85%; otherwise show ""Not Eligible.""","=IF(AND(Marks>=80,Attendance>=0.85),""Eligible"",""Not Eligible"")",
+11,IFS Function,"Show ""IT Premium"" for IT employees earning at least 45,000, ""HR Premium"" for HR employees earning at least 40,000, and ""Regular"" for everyone else.","=IFS(AND(Department=""IT"",Salary>=45000),""IT Premium"",AND(Department=""HR"",Salary>=40000),""HR Premium"",TRUE,""Regular"")",
+12,IFS Function,"Create a simple performance rating: 90+ Outstanding, 80-89 Strong, 70-79 Satisfactory, below 70 Needs Improvement.","=IFS(Marks>=90,""Outstanding"",Marks>=80,""Strong"",Marks>=70,""Satisfactory"",TRUE,""Needs Improvement"")",
+13,COUNTIF Function,How many employees are in the IT department?,"=COUNTIF(B2:B11,""IT"")",4
+14,COUNTIF Function,How many employees scored 80 or above?,"=COUNTIF(C2:C11,"">=80"")",4
+15,COUNTIF Function,"How many employees earn more than 40,000?","=COUNTIF(D2:D11,"">40000"")",7
+16,COUNTIF Function,How many employees have Attendance of 90% or above?,"=COUNTIF(E2:E11,"">=0.9"")",4
+17,COUNTIF Function,How many employees are in HR?,"=COUNTIF(B2:B11,""HR"")",3
+18,COUNTIF Function,How many employees scored below 60?,"=COUNTIF(C2:C11,""<60"")",1
+19,COUNTIF Function,"How many employees earn exactly 45,000?","=COUNTIF(D2:D11,45000)",1
+20,COUNTIF Function,"How many employee names start with the letter ""A""?","=COUNTIF(A2:A11,""A*"")",2
+21,COUNTIF Function,How many employees are not in the Sales department?,"=COUNTIF(B2:B11,""<>Sales"")",7
+22,SUMIF Function,Find the total Salary of IT employees.,"=SUMIF(B2:B11,""IT"",D2:D11)",195000
+23,SUMIF Function,Find the total Salary of HR employees.,"=SUMIF(B2:B11,""HR"",D2:D11)",119000
+24,SUMIF Function,Find the total Salary of Sales employees.,"=SUMIF(B2:B11,""Sales"",D2:D11)",132000
+25,SUMIF Function,Find the total Salary of employees who scored 80 or above.,"=SUMIF(C2:C11,"">=80"",D2:D11)",203000
+26,SUMIF Function,Find the total Marks of employees whose Attendance is 90% or above.,"=SUMIF(E2:E11,"">=0.9"",C2:C11)",359
+27,SUMIF Function,"Find the total Marks of employees earning more than 40,000.","=SUMIF(D2:D11,"">40000"",C2:C11)",571
+28,SUMIF Function,Find the total Marks of IT employees.,"=SUMIF(B2:B11,""IT"",C2:C11)",323
+29,SUMIF Function,Find the total Salary of employees who scored below 70.,"=SUMIF(C2:C11,""<70"",D2:D11)",118000
+30,Practical/Interview,"Use COUNTIF with IF: Count IT employees. If the count is more than 3, show ""Large Team""; otherwise show ""Small Team.""","=IF(COUNTIF(B2:B11,""IT"")>3,""Large Team"",""Small Team"")",Large Team
+31,Practical/Interview,"Use SUMIF with IF: Find total IT payroll. If it is above 1,50,000, show ""High Payroll""; otherwise show ""Low Payroll.""","=IF(SUMIF(B2:B11,""IT"",D2:D11)>150000,""High Payroll"",""Low Payroll"")",High Payroll
+32,Practical/Interview,"Use COUNTIF with IFS: Classify the number of employees scoring 80+: 5+ Excellent, 3-4 Good, 1-2 Average, 0 Poor.","=IFS(COUNTIF(C2:C11,"">=80"")>=5,""Excellent"",COUNTIF(C2:C11,"">=80"")>=3,""Good"",COUNTIF(C2:C11,"">=80"")>=1,""Average"",TRUE,""Poor"")",Good
+33,Practical/Interview,"Use IF with AND: Show ""Selected"" only when Marks are at least 70 and Attendance is at least 80%; otherwise show ""Rejected.""","=IF(AND(Marks>=70,Attendance>=0.8),""Selected"",""Rejected"")",
+34,Practical/Interview,"Use IF with OR: Show ""Bonus Eligible"" when Marks are at least 90 or Attendance is at least 95%; otherwise show ""Not Eligible.""","=IF(OR(Marks>=90,Attendance>=0.95),""Bonus Eligible"",""Not Eligible"")",
+35,Practical/Interview,"Show ""Priority"" when the employee is from IT and has Marks of at least 80; otherwise show ""Normal.""","=IF(AND(Department=""IT"",Marks>=80),""Priority"",""Normal"")",
+36,Practical/Interview,"Show ""Review Required"" when Marks are below 60 or Attendance is below 75%; otherwise show ""On Track.""","=IF(OR(Marks<60,Attendance<0.75),""Review Required"",""On Track"")",
